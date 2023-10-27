@@ -11,5 +11,18 @@ model usuarios {
   nome  String? @db.VarChar
   idade String? @db.VarChar
   email String? @db.VarChar
-  id    Int     @id(map: "usuarios_pk")
+  id    Int     @id(map: "usuarios_pk") @default(autoincrement())
+}
+
+model produtos {
+  nome       String? @db.VarChar
+  descricao  String? @db.VarChar
+  image      String? @db.VarChar
+  quantidade Int?
+  id         Int     @id(map: "produtos_pk") @default(autoincrement())
+}
+
+model avaliacao {
+  id   Int     @id(map: "avaliacao_pk") @default(autoincrement())
+  nota Float[]
 }
